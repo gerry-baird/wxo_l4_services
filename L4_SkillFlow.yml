@@ -10,9 +10,9 @@ paths:
       get:
         tags:
           - Customers
-        summary: Get a list of customers with recent life events
-        description: Get a list of customers with recent life events
-        operationId: customers_with_life_events
+        summary: L4 list of customers
+        description: L4 list of customers
+        operationId: l4_customers
         responses:
           '200':
             description: Customers with recent life events
@@ -20,19 +20,12 @@ paths:
               application/json:
                 schema:
                   $ref: '#/components/schemas/Customer_List'
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CreditResponse'
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+          '422':
+            description: Validation Error
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/HTTPValidationError'
 components:
   schemas:
     CreditRequest:
